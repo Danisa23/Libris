@@ -1,5 +1,7 @@
 import { reactive } from 'vue'
 
+const BASE_URL = import.meta.env.BASE_URL
+
 const state = reactive({
   libros: [
     {
@@ -10,7 +12,7 @@ const state = reactive({
       anio: 1949,
       descripcion:
         'Una novela distópica que describe un futuro totalitario donde el gobierno controla todos los aspectos de la vida, incluyendo la información, el pensamiento y la historia.',
-      portada: '/covers/1984.png',
+      portada: `${BASE_URL}covers/1984.png`,
     },
     {
       id: 2,
@@ -20,7 +22,7 @@ const state = reactive({
       anio: 1943,
       descripcion:
         'Un relato breve y poético sobre la amistad, la responsabilidad y la forma en que miramos el mundo.',
-      portada: '/covers/principito.png',
+      portada: `${BASE_URL}covers/principito.png`,
     },
     {
       id: 3,
@@ -30,7 +32,7 @@ const state = reactive({
       anio: 2018,
       descripcion:
         'Una guía práctica para crear buenos hábitos, eliminar los malos y mejorar de forma gradual.',
-      portada: '/covers/habitos.png',
+      portada: `${BASE_URL}covers/habitos.png`,
     },
     {
       id: 4,
@@ -38,8 +40,9 @@ const state = reactive({
       autor: 'Robert C. Martin',
       genero: 'Tecnología',
       anio: 2008,
-      descripcion: 'Principios y prácticas para escribir código claro, mantenible y profesional.',
-      portada: '/covers/clean-code.png',
+      descripcion:
+        'Principios y prácticas para escribir código claro, mantenible y profesional.',
+      portada: `${BASE_URL}covers/clean-code.png`,
     },
   ],
 })
@@ -53,18 +56,20 @@ function normalizarTitulo(titulo = '') {
 }
 
 const portadaPorTitulo = {
-  '1984': '/covers/1984.png',
-  'el principito': '/covers/principito.png',
-  'habitos atomicos': '/covers/habitos.png',
-  'clean code': '/covers/clean-code.png',
-  'el nombre del viento': '/covers/viento.png',
+  '1984': `${BASE_URL}covers/1984.png`,
+  'el principito': `${BASE_URL}covers/principito.png`,
+  'habitos atomicos': `${BASE_URL}covers/habitos.png`,
+  'clean code': `${BASE_URL}covers/clean-code.png`,
+  'el nombre del viento': `${BASE_URL}covers/viento.png`,
 }
 
 function portadaPara(libro, portadaActual = '') {
   const portadaConocida = portadaPorTitulo[normalizarTitulo(libro?.titulo)]
+
   if (portadaConocida) return portadaConocida
   if (portadaActual) return portadaActual
-  return '/icons/book-preview.svg'
+
+  return `${BASE_URL}icons/book-preview.svg`
 }
 
 export function useBiblioteca() {
@@ -83,6 +88,7 @@ export function useBiblioteca() {
 
   const actualizarLibro = (id, cambios) => {
     const libro = state.libros.find((item) => item.id === Number(id))
+
     if (!libro) return
 
     Object.assign(libro, {
@@ -93,11 +99,24 @@ export function useBiblioteca() {
   }
 
   const eliminarLibro = (id) => {
-    const indice = state.libros.findIndex((libro) => libro.id === Number(id))
-    if (indice >= 0) state.libros.splice(indice, 1)
+    const indice = state.libros.findIndex(
+      (libro) => libro.id === Number(id)
+    )
+
+    if (indice >= 0) {
+      state.libros.splice(indice, 1)
+    }
   }
 
-  const obtenerLibro = (id) => state.libros.find((libro) => libro.id === Number(id))
+  const obtenerLibro = (id) => {
+    return state.libros.find((libro) => libro.id === Number(id))
+  }
 
-  return { state, agregarLibro, actualizarLibro, eliminarLibro, obtenerLibro }
+  return {
+    state,
+    agregarLibro,
+    actualizarLibro,
+    eliminarLibro,
+    obtenerLibro,
+  }
 }
