@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 46" role="img" aria-labelledby="title">
+  <title id="title">Libris</title>
+  <g transform="translate(0 5)">
+    <path d="M2 5.5C12.4 5.5 20 8.4 25.4 13.8V35C20 30.8 12.4 28.8 2 28.8V5.5Z" fill="#0A3563"/>
+    <path d="M48.8 5.5C38.4 5.5 30.8 8.4 25.4 13.8V35C30.8 30.8 38.4 28.8 48.8 28.8V5.5Z" fill="#1769BD"/>
+    <path d="M25.4 13.8V35" stroke="#8CC5FF" stroke-width="1.9"/>
+    <path d="M5.2 32.1C13.5 32.1 20.2 33.7 25.4 37.6C30.6 33.7 37.2 32.1 45.6 32.1" fill="none" stroke="#0A3563" stroke-width="1.8" stroke-linecap="round" opacity=".95"/>
+  </g>
+  <text x="60" y="31" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#0B2344">Libris</text>
+</svg>
