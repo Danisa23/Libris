@@ -1,39 +1,37 @@
-# 📝 TaskFlow
+# 📚 Libris
 
-TaskFlow es una aplicación web para la gestión y organización de tareas, desarrollada como parte de mi formación en Desarrollo Front-End.
+Libris es una aplicación web de catálogo de libros desarrollada con Vue 3 como parte de mi formación en Desarrollo Front-End.
 
-El proyecto permite crear, visualizar, actualizar y eliminar tareas, además de mantener la información almacenada en el navegador mediante `localStorage`.
+El proyecto permite explorar un catálogo de libros, consultar información y navegar entre diferentes vistas utilizando Vue Router.
 
 ## 🌐 Demo
 
-Puedes probar la aplicación directamente en GitHub Pages:
+Puedes visualizar la aplicación publicada en GitHub Pages:
 
-👉 https://danisa23.github.io/TaskFlow/
+👉 https://danisa23.github.io/Libris/
 
 ## ✨ Funcionalidades
 
-- ➕ Crear nuevas tareas.
-- ✏️ Editar tareas.
-- 🗑️ Eliminar tareas.
-- ✅ Marcar tareas como completadas.
-- 📋 Visualizar el listado de tareas.
-- 🔎 Filtrar y organizar información.
-- 💾 Guardar tareas mediante `localStorage`.
-- 🌐 Consumo de información mediante API.
-- ⚡ Interacción dinámica con JavaScript.
-- 📱 Diseño adaptable a diferentes dispositivos.
-- 🎨 Interfaz sencilla y organizada.
+- 📚 Visualización de catálogo de libros.
+- 🔎 Exploración de diferentes títulos.
+- 📖 Consulta de información de los libros.
+- ❤️ Gestión de favoritos.
+- 🧭 Navegación entre diferentes vistas.
+- 🖼️ Visualización de portadas.
+- 📱 Interfaz adaptable a diferentes dispositivos.
+- ⚡ Componentes reutilizables desarrollados con Vue.
+- 🔗 Navegación mediante Vue Router.
 
 ## 🛠️ Tecnologías utilizadas
 
 | Tecnología | Uso |
 |------------|-----|
-| HTML5 | Estructura de la aplicación |
+| Vue 3 | Desarrollo de la interfaz |
+| Vue Router | Navegación entre vistas |
+| JavaScript | Lógica de la aplicación |
+| HTML5 | Estructura |
 | CSS3 | Diseño y estilos |
-| JavaScript | Lógica e interactividad |
-| DOM | Manipulación dinámica de elementos |
-| Fetch API | Consumo de datos externos |
-| LocalStorage | Persistencia de información |
+| Vite | Herramienta de desarrollo y construcción |
 | Git | Control de versiones |
 | GitHub | Gestión del repositorio |
 | GitHub Pages | Publicación del proyecto |
@@ -42,9 +40,22 @@ Puedes probar la aplicación directamente en GitHub Pages:
 ## 📂 Estructura del proyecto
 
 ```text
-TaskFlow/
+Libris/
+│
+├── .github/
+│   └── workflows/
+│
+├── public/
+│   └── covers/
+│
+├── src/
+│   ├── components/
+│   ├── views/
+│   ├── router/
+│   └── ...
 │
 ├── index.html
-├── styles.css
-├── script.js
+├── package.json
+├── package-lock.json
+├── vite.config.js
 └── README.md
